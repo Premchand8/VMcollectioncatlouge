@@ -19,19 +19,19 @@ export function ProductMedia({
   const [tab, setTab] = useState<"photos" | "film">("photos");
 
   return (
-    <div>
+    <div className="w-full">
       {hasFilm ? (
         <div
           role="tablist"
           aria-label="Piece media"
-          className="mb-5 grid grid-cols-2 border border-line"
+          className="mb-4 grid grid-cols-2 border border-line"
         >
           <button
             type="button"
             role="tab"
             aria-selected={tab === "photos"}
             onClick={() => setTab("photos")}
-            className={`h-12 text-[10px] uppercase tracking-[0.24em] transition-colors ${
+            className={`h-11 text-[10px] uppercase tracking-[0.24em] transition-colors sm:h-12 ${
               tab === "photos"
                 ? "bg-navy text-white"
                 : "bg-transparent text-muted hover:text-navy"
@@ -44,7 +44,7 @@ export function ProductMedia({
             role="tab"
             aria-selected={tab === "film"}
             onClick={() => setTab("film")}
-            className={`h-12 text-[10px] uppercase tracking-[0.24em] transition-colors ${
+            className={`h-11 text-[10px] uppercase tracking-[0.24em] transition-colors sm:h-12 ${
               tab === "film"
                 ? "bg-navy text-white"
                 : "bg-transparent text-muted hover:text-navy"

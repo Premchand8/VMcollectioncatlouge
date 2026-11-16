@@ -95,7 +95,7 @@ export function CollectionBanner({
       aria-label={`${title} film`}
       className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 overflow-hidden"
     >
-      <div className="film-frame group relative min-h-[78vh] w-full bg-card sm:min-h-[70vh]">
+      <div className="film-frame group relative min-h-[min(78dvh,720px)] w-full bg-card sm:min-h-[min(72dvh,760px)]">
         <video
           ref={videoRef}
           poster={poster}

@@ -21,7 +21,7 @@ export function ProductTile({
       style={{ animationDelay: `${Math.min(index, 8) * 0.06}s` }}
     >
       <Link href={href} prefetch={true} className="group block">
-        <div className="relative aspect-[4/5] overflow-hidden bg-surface">
+        <div className="relative aspect-square overflow-hidden bg-surface sm:aspect-[4/5]">
           {image ? (
             <Image
               src={image}
@@ -29,7 +29,7 @@ export function ProductTile({
               fill
               sizes="(max-width: 768px) 46vw, 280px"
               priority={priority}
-              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+              className="object-contain object-center p-1.5 transition-transform duration-700 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100 sm:p-2"
             />
           ) : (
             <div className="flex h-full items-center justify-center px-3 text-center text-sm text-muted">

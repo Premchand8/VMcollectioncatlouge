@@ -39,7 +39,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   if (!product) notFound();
 
   return (
-    <main id="content" className="mx-auto w-full max-w-5xl pb-16">
+    <main id="content" className="mx-auto w-full max-w-6xl pb-10 lg:pb-16">
       <div className="px-4 sm:px-6">
         <BackLink href={collectionPath(collection.slug)} label={collection.name} />
       </div>

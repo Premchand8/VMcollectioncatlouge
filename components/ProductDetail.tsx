@@ -56,91 +56,103 @@ export function ProductDetail({
   }, [go, next?.code, previous?.code]);
 
   return (
-    <article className="pb-24">
+    <article className="pb-28 lg:pb-16">
       <p className="sr-only" aria-live="polite">
         {product.name}, piece {index + 1} of {products.length}
       </p>
 
-      <div className="px-4 sm:px-6">
-        <ProductMedia
-          key={product.code}
-          images={product.images}
-          videoUrl={product.videoUrl}
-          name={product.name}
-          onEdgeSwipe={(direction) =>
-            go(direction === "next" ? next?.code : previous?.code)
-          }
-        />
-      </div>
-
-      <div
-        className="touch-pan-y px-4 sm:px-6"
-        onPointerDown={(event) => {
-          if ((event.target as HTMLElement).closest("a, button")) return;
-          drag.current = { x: event.clientX, y: event.clientY };
-        }}
-        onPointerUp={(event) => {
-          if (!drag.current) return;
-          const dx = event.clientX - drag.current.x;
-          const dy = event.clientY - drag.current.y;
-          drag.current = null;
-          if (Math.abs(dx) < 48 || Math.abs(dx) < Math.abs(dy)) return;
-          go(dx < 0 ? next?.code : previous?.code);
-        }}
-        onPointerCancel={() => {
-          drag.current = null;
-        }}
-      >
-        <p className="mt-8 text-[10px] uppercase tracking-[0.28em] text-gold">
-          {product.category}
-        </p>
-        <h1 className="mt-3 font-display text-[2.6rem] leading-none text-navy sm:text-5xl">
-          {product.name}
-        </h1>
-        <span className="gold-rule mt-5" />
-        <p className="mt-5 max-w-prose text-[0.95rem] leading-relaxed text-muted">
-          {product.description}
-        </p>
-
-        <ProductSpecs product={product} />
-      </div>
-
-      <nav
-        aria-label="Other pieces in this collection"
-        className="mt-12 px-4 sm:px-6"
-      >
-        <p className="text-[10px] uppercase tracking-[0.28em] text-gold">
-          More from {collectionName}
-        </p>
-        <div className="mt-5 grid grid-cols-2 gap-3">
-          {previous ? (
-            <NeighborCard
-              label="Previous"
-              product={previous}
-              href={productPath(slug, previous.code)}
-              align="left"
-            />
-          ) : (
-            <span className="flex min-h-20 items-center border border-line px-3 text-sm text-muted">
-              Previous
-            </span>
-          )}
-          {next ? (
-            <NeighborCard
-              label="Next"
-              product={next}
-              href={productPath(slug, next.code)}
-              align="right"
-            />
-          ) : (
-            <span className="flex min-h-20 items-center justify-end border border-line px-3 text-sm text-muted">
-              Next
-            </span>
-          )}
+      <div className="px-4 sm:px-6 lg:grid lg:grid-cols-2 lg:items-start lg:gap-10 xl:gap-14">
+        <div className="lg:sticky lg:top-20 lg:self-start">
+          <ProductMedia
+            key={product.code}
+            images={product.images}
+            videoUrl={product.videoUrl}
+            name={product.name}
+            onEdgeSwipe={(direction) =>
+              go(direction === "next" ? next?.code : previous?.code)
+            }
+          />
         </div>
-      </nav>
 
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-background/95 backdrop-blur-md">
+        <div
+          className="touch-pan-y lg:pt-1"
+          onPointerDown={(event) => {
+            if ((event.target as HTMLElement).closest("a, button")) return;
+            drag.current = { x: event.clientX, y: event.clientY };
+          }}
+          onPointerUp={(event) => {
+            if (!drag.current) return;
+            const dx = event.clientX - drag.current.x;
+            const dy = event.clientY - drag.current.y;
+            drag.current = null;
+            if (Math.abs(dx) < 48 || Math.abs(dx) < Math.abs(dy)) return;
+            go(dx < 0 ? next?.code : previous?.code);
+          }}
+          onPointerCancel={() => {
+            drag.current = null;
+          }}
+        >
+          <p className="mt-6 text-[10px] uppercase tracking-[0.28em] text-gold lg:mt-0">
+            {product.category}
+          </p>
+          <h1 className="mt-3 font-display text-[2.15rem] leading-[1.05] text-navy sm:text-4xl lg:text-[2.75rem]">
+            {product.name}
+          </h1>
+          <span className="gold-rule mt-4" />
+          <p className="mt-4 max-w-prose text-[0.95rem] leading-relaxed text-muted">
+            {product.description}
+          </p>
+
+          <ProductSpecs product={product} />
+
+          {enquire ? (
+            <a
+              href={enquire}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 hidden h-12 w-full items-center justify-center bg-navy px-4 text-[11px] font-medium uppercase tracking-[0.2em] text-white transition-opacity hover:opacity-90 lg:inline-flex"
+            >
+              Enquire on WhatsApp
+              <span className="sr-only"> (opens WhatsApp in a new tab)</span>
+            </a>
+          ) : null}
+
+          <nav aria-label="Other pieces in this collection" className="mt-10">
+            <p className="text-[10px] uppercase tracking-[0.28em] text-gold">
+              More from {collectionName}
+            </p>
+            <div className="mt-4 grid grid-cols-2 gap-3">
+              {previous ? (
+                <NeighborCard
+                  label="Previous"
+                  product={previous}
+                  href={productPath(slug, previous.code)}
+                  align="left"
+                />
+              ) : (
+                <span className="flex min-h-20 items-center border border-line px-3 text-sm text-muted">
+                  Previous
+                </span>
+              )}
+              {next ? (
+                <NeighborCard
+                  label="Next"
+                  product={next}
+                  href={productPath(slug, next.code)}
+                  align="right"
+                />
+              ) : (
+                <span className="flex min-h-20 items-center justify-end border border-line px-3 text-sm text-muted">
+                  Next
+                </span>
+              )}
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      {/* Mobile sticky enquire — desktop uses the in-column CTA */}
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-background/95 backdrop-blur-md lg:hidden">
         <div
           aria-hidden="true"
           className="h-px w-full bg-gradient-to-r from-transparent via-gold-fill/60 to-transparent"
@@ -198,7 +210,7 @@ function NeighborCard({
             alt=""
             fill
             sizes="56px"
-            className="object-cover"
+            className="object-contain p-0.5"
           />
         ) : null}
       </div>

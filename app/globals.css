@@ -190,6 +190,31 @@
   animation: line-draw 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
 }
 
+/* Product photo stage — fits phone + desktop without oversized frames */
+.product-frame {
+  position: relative;
+  width: min(100%, 52vh);
+  height: min(100vw, 52vh);
+  margin-inline: auto;
+}
+
+@media (min-width: 640px) {
+  .product-frame {
+    width: min(100%, 58vh);
+    height: min(100vw, 58vh);
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-frame {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    max-height: min(68vh, 560px);
+    min-height: 420px;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;

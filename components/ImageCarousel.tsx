@@ -16,7 +16,7 @@ export function ImageCarousel({ images, name, onEdgeSwipe }: ImageCarouselProps)
 
   if (images.length === 0) {
     return (
-      <div className="flex aspect-[4/5] items-center justify-center bg-card text-sm text-muted">
+      <div className="product-frame flex items-center justify-center bg-surface text-sm text-muted">
         No photograph yet
       </div>
     );
@@ -67,7 +67,7 @@ export function ImageCarousel({ images, name, onEdgeSwipe }: ImageCarouselProps)
         }
       }}
     >
-      <div className="relative overflow-hidden bg-card">
+      <div className="relative overflow-hidden bg-surface">
         <div
           className="flex transition-transform duration-300"
           style={{ transform: `translateX(-${safeIndex * 100}%)` }}
@@ -75,32 +75,34 @@ export function ImageCarousel({ images, name, onEdgeSwipe }: ImageCarouselProps)
           {images.map((src, imageIndex) => (
             <div
               key={`${src}-${imageIndex}`}
-              className="relative aspect-[4/5] w-full shrink-0 grow-0 basis-full"
+              className="flex w-full shrink-0 grow-0 basis-full justify-center"
             >
-              <Image
-                src={src}
-                alt={`${name}, photograph ${imageIndex + 1} of ${images.length}`}
-                fill
-                priority={imageIndex === 0}
-                sizes="(max-width: 768px) 100vw, 720px"
-                className="object-cover"
-              />
+              <div className="product-frame">
+                <Image
+                  src={src}
+                  alt={`${name}, photograph ${imageIndex + 1} of ${images.length}`}
+                  fill
+                  priority={imageIndex === 0}
+                  sizes="(max-width: 1023px) 92vw, 480px"
+                  className="object-contain object-center p-2 sm:p-3"
+                />
+              </div>
             </div>
           ))}
         </div>
         {images.length > 1 ? (
-          <p className="absolute bottom-3 left-3 bg-navy-deep/70 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] tabular-nums text-white backdrop-blur-sm">
+          <p className="absolute bottom-3 left-3 z-10 bg-navy-deep/70 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] tabular-nums text-white backdrop-blur-sm">
             {safeIndex + 1} / {images.length}
           </p>
         ) : null}
         {images.length > 1 ? (
-          <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-2">
+          <div className="pointer-events-none absolute inset-y-0 left-0 right-0 z-10 flex items-center justify-between px-2">
             <button
               type="button"
               aria-label="Previous photograph"
               disabled={safeIndex === 0}
               onClick={() => show(safeIndex - 1)}
-              className="inline-flex h-10 w-10 items-center justify-center bg-navy-deep/55 text-white backdrop-blur-sm transition-opacity hover:opacity-90 disabled:opacity-30"
+              className="pointer-events-auto inline-flex h-10 w-10 items-center justify-center bg-navy-deep/55 text-white backdrop-blur-sm transition-opacity hover:opacity-90 disabled:opacity-30"
             >
               <ChevronLeftIcon className="h-4 w-4" />
             </button>
@@ -109,7 +111,7 @@ export function ImageCarousel({ images, name, onEdgeSwipe }: ImageCarouselProps)
               aria-label="Next photograph"
               disabled={safeIndex === images.length - 1}
               onClick={() => show(safeIndex + 1)}
-              className="inline-flex h-10 w-10 items-center justify-center bg-navy-deep/55 text-white backdrop-blur-sm transition-opacity hover:opacity-90 disabled:opacity-30"
+              className="pointer-events-auto inline-flex h-10 w-10 items-center justify-center bg-navy-deep/55 text-white backdrop-blur-sm transition-opacity hover:opacity-90 disabled:opacity-30"
             >
               <ChevronRightIcon className="h-4 w-4" />
             </button>
@@ -120,23 +122,31 @@ export function ImageCarousel({ images, name, onEdgeSwipe }: ImageCarouselProps)
         Photograph {safeIndex + 1} of {images.length}
       </p>
       {images.length > 1 ? (
-        <div className="flex justify-center" role="tablist" aria-label="Photographs">
+        <div
+          className="mt-3 flex justify-center gap-2 sm:mt-4"
+          role="tablist"
+          aria-label="Photographs"
+        >
           {images.map((src, imageIndex) => (
             <button
-              key={`${src}-dot-${imageIndex}`}
+              key={`${src}-thumb-${imageIndex}`}
               type="button"
               role="tab"
               aria-selected={imageIndex === safeIndex}
               aria-label={`Photograph ${imageIndex + 1} of ${images.length}`}
               onClick={() => show(imageIndex)}
-              className="inline-flex h-11 w-11 items-center justify-center"
+              className={`relative h-14 w-14 overflow-hidden border transition-colors sm:h-16 sm:w-16 ${
+                imageIndex === safeIndex
+                  ? "border-gold-fill"
+                  : "border-line hover:border-gold/50"
+              }`}
             >
-              <span
-                className={`h-px transition-all duration-300 ${
-                  imageIndex === safeIndex
-                    ? "w-6 bg-gold-fill"
-                    : "w-3 bg-line"
-                }`}
+              <Image
+                src={src}
+                alt=""
+                fill
+                sizes="64px"
+                className="object-contain bg-surface p-1"
               />
             </button>
           ))}

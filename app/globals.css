@@ -1,26 +1,281 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Quarto";
+  src: url("/fonts/Quarto-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Quarto";
+  src: url("/fonts/Quarto-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Quarto";
+  src: url("/fonts/Quarto-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham-Book.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* PMJ maison palette — navy + gold on ivory */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  --background: #fdfbf8;
+  --foreground: #0d1f45;
+  --muted: #5a6478;
+  --card: #ffffff;
+  --line: #e6e2d8;
+  --gold: #8e7243;
+  --gold-fill: #b28c4a;
+  --gold-ink: #ffffff;
+  --navy: #0d1f45;
+  --navy-deep: #06132d;
+  --surface: #f8f6f2;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #06132d;
+  --foreground: #f5f1e8;
+  --muted: #a8b0c2;
+  --card: #0d1f45;
+  --line: #1c3257;
+  --gold: #d8b26d;
+  --gold-fill: #c6a771;
+  --gold-ink: #06132d;
+  --navy: #f5f1e8;
+  --navy-deep: #020817;
+  --surface: #0a1838;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --background: #06132d;
+    --foreground: #f5f1e8;
+    --muted: #a8b0c2;
+    --card: #0d1f45;
+    --line: #1c3257;
+    --gold: #d8b26d;
+    --gold-fill: #c6a771;
+    --gold-ink: #06132d;
+    --navy: #f5f1e8;
+    --navy-deep: #020817;
+    --surface: #0a1838;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-gold: var(--gold);
+  --color-gold-fill: var(--gold-fill);
+  --color-gold-ink: var(--gold-ink);
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-surface: var(--surface);
+  --font-sans: Gotham, ui-sans-serif, system-ui, sans-serif;
+  --font-display: Quarto, "Times New Roman", serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    height: 100%;
+  }
+
+  body {
+    min-height: 100%;
+    background-color: var(--background);
+    background-image:
+      radial-gradient(ellipse 120% 60% at 50% -20%, color-mix(in srgb, var(--gold-fill) 12%, transparent), transparent),
+      linear-gradient(180deg, var(--surface) 0%, var(--background) 28%);
+    background-attachment: fixed;
+    color: var(--foreground);
+    font-family: Gotham, ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+
+  .font-display {
+    font-family: Quarto, "Times New Roman", serif;
+    letter-spacing: 0.01em;
+  }
+
+  .font-sans {
+    font-family: Gotham, ui-sans-serif, system-ui, sans-serif;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--gold-fill);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--gold-fill) 40%, transparent);
+    color: var(--navy-deep);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes line-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-rise {
+  animation: rise-in 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-rise-delay-1 {
+  animation: rise-in 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+
+.animate-rise-delay-2 {
+  animation: rise-in 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+.gold-rule {
+  display: block;
+  height: 1px;
+  width: 2.5rem;
+  background: var(--gold-fill);
+  transform-origin: left center;
+  animation: line-draw 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-rise,
+  .animate-rise-delay-1,
+  .animate-rise-delay-2 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .gold-rule {
+    animation: none !important;
+    transform: scaleX(1) !important;
+  }
+}
+
+input[type="range"].scrubber {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 3px;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+input[type="range"].scrubber::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border: 0;
+  border-radius: 0;
+  background: #d8b26d;
+}
+
+input[type="range"].scrubber::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border: 0;
+  border-radius: 0;
+  background: #d8b26d;
+}
+
+.theme-sun {
+  display: none;
+}
+
+.theme-moon {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-sun {
+    display: block;
+  }
+
+  :root:not([data-theme="light"]) .theme-moon {
+    display: none;
+  }
+}
+
+:root[data-theme="dark"] .theme-sun {
+  display: block;
+}
+
+:root[data-theme="dark"] .theme-moon {
+  display: none;
+}
+
+:root[data-theme="light"] .theme-sun {
+  display: none;
+}
+
+:root[data-theme="light"] .theme-moon {
+  display: block;
 }

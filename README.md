@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PMJ Jewels · Gajavali catalogue
 
-## Getting Started
+Shoppers scan one QR on the printed creative and open the **Gajavali** collection.
 
-First, run the development server:
+## Flow
+
+1. QR / home → `/c/gajavali` — collection film banner, then the ten pieces
+2. Tap a piece → three angles, film, metal and stone notes
+3. **Enquire on WhatsApp** → PMJ number from `.env.local`
+
+## Run
 
 ```bash
+npm install
+copy .env.example .env.local
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000/c/gajavali](http://localhost:3000/c/gajavali). Visiting `/` also redirects there.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Typography matches pmjjewels.com: **Quarto** for headings, **Gotham** for body (`public/fonts`).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## QR
 
-## Learn More
+```bash
+# .env.local
+CATALOG_BASE_URL=https://catalogue.example.com
+npm run qr
+```
 
-To learn more about Next.js, take a look at the following resources:
+Writes `public/qr/gajavali.png` → `https://catalogue.example.com/c/gajavali`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Customer product details
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Only shopper-facing fields are shown on the piece page:
 
-## Deploy on Vercel
+| Excel | Shown as | JSON |
+| --- | --- | --- |
+| CATG | Category | `category` |
+| CLASIFICATION | Type | `classification` |
+| metal + PURITY | Metal | `metal`, `purityKt` |
+| METAL_WT | Gold weight | `metalWeightG` |
+| DIA_WT + DIA_PCS | Diamond | `diamondWeightCt`, `diamondPieces` |
+| CLS_WT + CLS_PCS | Colour stone | `colorStoneWeightCt`, `colorStonePieces` |
+| WEIGHT | Total weight | `totalWeightG` |
+| MAIN_STOCK_CODE | Stock code | `code` |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Hidden from the shopper: VARIANT, PRODTYPE, SUBCATEGORY, PIECES, CNT, Dia Gold codes, etc.

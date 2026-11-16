@@ -1,0 +1,153 @@
+[
+  {
+    "slug": "gajavali",
+    "name": "Gajavali",
+    "tagline": "Elephant jewellery from the PMJ workbench",
+    "description": "Gajavali is our elephant collection — earrings and pendants in yellow and rose gold. You’ll see diamond-set heads, ruby eyes, emerald drops and a few quieter everyday pieces mixed in.",
+    "bannerImage": "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SMAT11196091_1.jpg",
+    "videoUrl": "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SMAT11196091_4.mp4",
+    "videoPoster": "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SMAT11196091_1.jpg",
+    "products": [
+      {
+        "code": "SMAT11196091",
+        "name": "Pear drop elephant earrings",
+        "description": "A pair of elephant studs in yellow gold. Diamonds cover the heads, rubies sit in the eyes, and a clear pear hangs from each trunk.",
+        "category": "Earrings",
+        "metal": "Yellow gold",
+        "images": [
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SMAT11196091_1.jpg",
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SMAT11196091_2.jpg",
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SMAT11196091_3.jpg"
+        ],
+        "videoUrl": "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SMAT11196091_4.mp4",
+        "classification": "Diamond"
+      },
+      {
+        "code": "SMAT11288701",
+        "name": "Rose cluster elephant earrings",
+        "description": "Same elephant form, finished with a bunch of rose-pink beads under each trunk. Soft colour against the diamond-set gold.",
+        "category": "Earrings",
+        "metal": "Yellow gold",
+        "images": [
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SMAT11288701_1.jpg",
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SMAT11288701_2.jpg",
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SMAT11288701_3.jpg"
+        ],
+        "videoUrl": "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SMAT11288701_4.mp4",
+        "classification": "Diamond"
+      },
+      {
+        "code": "SMAT1179041",
+        "name": "Emerald leaf elephant earrings",
+        "description": "Elephant studs with a taper of carved emerald leaves. Green against the diamond work — festive without being heavy.",
+        "category": "Earrings",
+        "metal": "Yellow gold",
+        "images": [
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SMAT1179041_1.jpg",
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SMAT1179041_2.jpg",
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SMAT1179041_3.jpg"
+        ],
+        "videoUrl": "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SMAT1179041_4.mp4",
+        "classification": "Diamond"
+      },
+      {
+        "code": "SMAT1179289",
+        "name": "Mint grape elephant earrings",
+        "description": "Elephant earrings with a light mint grape drop under a small diamond cap. Easy to wear with a silk saree or a plain blouse.",
+        "category": "Earrings",
+        "metal": "Yellow gold",
+        "images": [
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SMAT1179289_1.jpg",
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SMAT1179289_2.jpg",
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SMAT1179289_3.jpg"
+        ],
+        "videoUrl": "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SMAT1179289_4.mp4",
+        "classification": "Diamond"
+      },
+      {
+        "code": "SPND1119627",
+        "name": "Emerald cabochon elephant pendant",
+        "description": "An elephant pendant with a big oval emerald beside the trunk and ruby beads below. The chain has small blue and pink bead stops.",
+        "category": "Pendant",
+        "metal": "Yellow gold",
+        "images": [
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SPND1119627_1.jpg",
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SPND1119627_2.jpg",
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SPND1119627_3.jpg"
+        ],
+        "videoUrl": "/videos/SPND1119627.mp4",
+        "classification": "Diamond"
+      },
+      {
+        "code": "SPND1128867",
+        "name": "Diamond tassel elephant pendant",
+        "description": "A full elephant in diamond pavé with pink accents, and three diamond tassels hanging from the base.",
+        "category": "Pendant",
+        "metal": "Yellow gold",
+        "images": [
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SPND1128867_1.jpg",
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SPND1128867_2.jpg",
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SPND1128867_3.jpg"
+        ],
+        "videoUrl": "/videos/SPND1128867.mp4",
+        "classification": "Diamond"
+      },
+      {
+        "code": "SPND1158012",
+        "name": "Ganesha rose gold sunburst",
+        "description": "A small Ganesha head in rose gold and diamonds, set over a sunburst rim. Light enough for everyday wear.",
+        "category": "Pendant",
+        "metal": "Rose gold",
+        "images": [
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SPND1158012_1.jpg",
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SPND1158012_2.jpg",
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SPND1158012_3.jpg"
+        ],
+        "videoUrl": "/videos/SPND1158012.mp4",
+        "classification": "Diamond"
+      },
+      {
+        "code": "SPND1158389",
+        "name": "Trimukha Ganesha with temple coins",
+        "description": "Three Ganesha faces in diamonds, resting on rose-gold temple coins. A piece with clear temple jewellery character.",
+        "category": "Pendant",
+        "metal": "Rose gold with white-metal diamond setting",
+        "images": [
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SPND1158389_1.jpg",
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SPND1158389_2.jpg",
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SPND1158389_3.jpg"
+        ],
+        "videoUrl": "/videos/SPND1158389.mp4",
+        "classification": "Diamond"
+      },
+      {
+        "code": "SPND1178933",
+        "name": "Emerald grape elephant pendant",
+        "description": "Elephant head in diamonds, opening into a thick emerald grape drop. Oval emerald beads sit along the chain.",
+        "category": "Pendant",
+        "metal": "Yellow gold",
+        "images": [
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SPND1178933_1.jpg",
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SPND1178933_2.jpg",
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SPND1178933_3.jpg"
+        ],
+        "videoUrl": "/videos/SPND1178933.mp4",
+        "classification": "Diamond"
+      },
+      {
+        "code": "SPND1179026",
+        "name": "Ganesha emerald fringe necklace",
+        "description": "The statement piece of the line — Ganesha centre, carved emerald leaves, ruby touches and a full emerald fringe on the chain.",
+        "category": "Pendant",
+        "metal": "Yellow gold",
+        "images": [
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SPND1179026_1.jpg",
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SPND1179026_2.jpg",
+          "https://jewelleryestimator.s3.ap-south-2.amazonaws.com/pmj-com/Nithin+VM+Scanner+/SPND1179026_3.jpg"
+        ],
+        "videoUrl": "/videos/SPND1179026.mp4",
+        "classification": "Diamond"
+      }
+    ]
+  }
+]

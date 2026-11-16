@@ -205,13 +205,18 @@
   }
 }
 
+/* Desktop: viewport-fit stage so the piece is visible without scrolling */
 @media (min-width: 1024px) {
   .product-frame {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 5;
-    max-height: min(68vh, 560px);
-    min-height: 420px;
+    width: 100% !important;
+    height: calc(100dvh - 14rem) !important;
+    max-height: 400px !important;
+    min-height: 240px !important;
+    aspect-ratio: auto !important;
+  }
+
+  .product-frame img {
+    object-fit: contain !important;
   }
 }
 

@@ -15,16 +15,16 @@ export function ProductSpecs({ product }: { product: Product }) {
   const rows = buildCustomerSpecs(product);
 
   return (
-    <section aria-label="Product details" className="mt-8">
+    <section aria-label="Product details" className="mt-6 lg:mt-5">
       <p className="text-[10px] uppercase tracking-[0.28em] text-gold">
         Product details
       </p>
-      <span className="gold-rule mt-3" />
-      <dl className="mt-5 divide-y divide-line border-y border-line">
+      <span className="gold-rule mt-2 lg:mt-2" />
+      <dl className="mt-4 divide-y divide-line border-y border-line lg:mt-3">
         {rows.map((row) => (
           <div
             key={row.label}
-            className="flex items-baseline justify-between gap-4 py-4"
+            className="flex items-baseline justify-between gap-4 py-3.5 lg:py-2.5"
           >
             <dt className="text-[13px] text-muted">{row.label}</dt>
             <dd className="max-w-[62%] text-right text-[13px] font-medium tracking-wide text-navy tabular-nums">

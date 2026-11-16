@@ -61,8 +61,8 @@ export function ProductDetail({
         {product.name}, piece {index + 1} of {products.length}
       </p>
 
-      <div className="px-4 sm:px-6 lg:grid lg:grid-cols-2 lg:items-start lg:gap-10 xl:gap-14">
-        <div className="lg:sticky lg:top-20 lg:self-start">
+      <div className="px-4 sm:px-6 lg:grid lg:grid-cols-2 lg:items-start lg:gap-8 xl:gap-12">
+        <div className="lg:sticky lg:top-[4.75rem] lg:self-start">
           <ProductMedia
             key={product.code}
             images={product.images}
@@ -75,7 +75,7 @@ export function ProductDetail({
         </div>
 
         <div
-          className="touch-pan-y lg:pt-1"
+          className="touch-pan-y lg:flex lg:min-h-0 lg:flex-col lg:pt-0"
           onPointerDown={(event) => {
             if ((event.target as HTMLElement).closest("a, button")) return;
             drag.current = { x: event.clientX, y: event.clientY };
@@ -95,11 +95,11 @@ export function ProductDetail({
           <p className="mt-6 text-[10px] uppercase tracking-[0.28em] text-gold lg:mt-0">
             {product.category}
           </p>
-          <h1 className="mt-3 font-display text-[2.15rem] leading-[1.05] text-navy sm:text-4xl lg:text-[2.75rem]">
+          <h1 className="mt-2 font-display text-[2.15rem] leading-[1.05] text-navy sm:text-4xl lg:mt-2 lg:text-[2.35rem]">
             {product.name}
           </h1>
-          <span className="gold-rule mt-4" />
-          <p className="mt-4 max-w-prose text-[0.95rem] leading-relaxed text-muted">
+          <span className="gold-rule mt-3 lg:mt-3" />
+          <p className="mt-3 max-w-prose text-[0.95rem] leading-relaxed text-muted lg:mt-3 lg:line-clamp-3">
             {product.description}
           </p>
 
@@ -110,14 +110,17 @@ export function ProductDetail({
               href={enquire}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 hidden h-12 w-full items-center justify-center bg-navy px-4 text-[11px] font-medium uppercase tracking-[0.2em] text-white transition-opacity hover:opacity-90 lg:inline-flex"
+              className="mt-6 hidden h-11 w-full items-center justify-center bg-navy px-4 text-[11px] font-medium uppercase tracking-[0.2em] text-white transition-opacity hover:opacity-90 lg:mt-5 lg:inline-flex"
             >
               Enquire on WhatsApp
               <span className="sr-only"> (opens WhatsApp in a new tab)</span>
             </a>
           ) : null}
 
-          <nav aria-label="Other pieces in this collection" className="mt-10">
+          <nav
+            aria-label="Other pieces in this collection"
+            className="mt-10 lg:mt-8"
+          >
             <p className="text-[10px] uppercase tracking-[0.28em] text-gold">
               More from {collectionName}
             </p>

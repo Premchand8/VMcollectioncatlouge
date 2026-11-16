@@ -24,14 +24,14 @@ export function ProductMedia({
         <div
           role="tablist"
           aria-label="Piece media"
-          className="mb-4 grid grid-cols-2 border border-line"
+          className="mb-3 grid grid-cols-2 border border-line lg:mb-3"
         >
           <button
             type="button"
             role="tab"
             aria-selected={tab === "photos"}
             onClick={() => setTab("photos")}
-            className={`h-11 text-[10px] uppercase tracking-[0.24em] transition-colors sm:h-12 ${
+            className={`h-11 text-[10px] uppercase tracking-[0.24em] transition-colors sm:h-12 lg:h-10 ${
               tab === "photos"
                 ? "bg-navy text-white"
                 : "bg-transparent text-muted hover:text-navy"
@@ -44,7 +44,7 @@ export function ProductMedia({
             role="tab"
             aria-selected={tab === "film"}
             onClick={() => setTab("film")}
-            className={`h-11 text-[10px] uppercase tracking-[0.24em] transition-colors sm:h-12 ${
+            className={`h-11 text-[10px] uppercase tracking-[0.24em] transition-colors sm:h-12 lg:h-10 ${
               tab === "film"
                 ? "bg-navy text-white"
                 : "bg-transparent text-muted hover:text-navy"
